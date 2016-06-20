@@ -494,7 +494,7 @@ $(function () {
 		  
 		  
 		  
-/*	
+	
   $('.fotorama').on(
   'fotorama:show',
   function (e, fotorama, extra) {
@@ -511,7 +511,6 @@ $(function () {
 				}
 			}
   });
-  */
  
   $('.fotorama').on(
   'fotorama:showend',
@@ -519,23 +518,13 @@ $(function () {
 	
 		if((fotorama.activeFrame.videox)=="video"){
 		  currentvideo=$(".fotorama__active video").get(0)
-		 
-		 if(currentvideo){
-
-		 currentvideo.play();
-		  currentvideo.oncanplay = function(e) {
-				
-		  
+		  if(currentvideo){
+		  currentvideo.play();
 		  fotorama.stopAutoplay()
-		
-		};
-		
-		  currentvideo.onended=function(){}
 		  currentvideo.onended = function(e) {
 				fotorama.show('>');
 				fotorama.startAutoplay(<% print(looptime * 1000) %>)
 				};
-				
 		}
 		}
   });
